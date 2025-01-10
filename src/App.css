@@ -1,0 +1,240 @@
+#root {
+  max-width: 1280px;
+  --pic-padding: 0.15em;
+  --main-color: #1A324C;
+  --comment-bg: #F6FBFF;
+  --comment-border: #CDECFB;
+  --commenter-name: #577C8E;
+}
+
+.header {
+  background-color: var(--main-color);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 3em 0;
+  margin-bottom: 0;
+  padding: 0.5em;
+  font-size: 24px;
+}
+.name, .profession{
+  width: 50%;
+  text-align: center;
+}
+
+.prof-pic {
+  position: absolute;
+  top: calc(var(--pic-padding) - 2em);
+  border-radius: 50%;
+}
+.inner-img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.inner-img img{
+  flex-grow: 1;
+  background-color: var(--comment-bg);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.article-container {
+  display: flex;
+  font-size: 14px;
+  color: var(--main-color);
+  padding: 3em 1.5em;
+  justify-content: space-between;
+  flex-basis: 100%;
+  gap: 6em;
+}
+.article-container> div{
+  flex-grow: 1;
+  width: 50%;
+}
+
+.article > p{
+  font-size: 16px;
+}
+.corres-pic {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 1em;
+  padding-right: 1.5em;
+}
+
+.corres-pic img {
+  width: 75%;
+  object-fit: contain;
+  border: 2px solid var(--main-color);
+  border-radius: 4px;
+}
+
+.reaction-comments{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2em;
+  color: var(--main-color);
+  font-size: 10px;
+  padding-right: 4em;
+}
+
+.reactions{
+  display: flex;
+  gap: 1.5em;
+}
+.reactions div{
+  display: flex;
+  gap: 0.75em;
+  align-items: center;
+  font-size: 16px;
+  padding: 0.25em;
+}
+.comment-input{
+  background-color: var(--comment-bg);
+  padding: 0.5em 1.5em;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--comment-border);
+  gap: 4em;
+}
+.comment{
+  background-color: var(--comment-bg);
+  font-size: 14px;
+  outline: none;
+  color: var(--main-color);
+  border: none;
+  outline: none;
+}
+.camera, .emoji{
+  background-color: var(--comment-bg);
+  border: none;
+  outline: none;
+}
+.camera:hover, .emoji:hover{
+  cursor: pointer;
+}
+
+.comment-box{
+  border-top: 1px solid var(--comment-border);
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  position: relative;
+}
+.comment-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comment-innerbox{
+  background-color: var(--comment-bg);
+  font-size: 12px;
+  padding: 0.8em 1.2em;
+  border-radius: 5px;
+  border: 1px solid var(--comment-border);
+  color: var(--main-color);
+}
+
+.commenter{
+  color: var(--commenter-name);
+}
+
+.load-comment-button{
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
+.btn-load{
+  padding: 0.5em 2em;
+  background: none;
+  border: none;
+  color: var(--main-color);
+}
+.btn-load:hover{
+  cursor: pointer;
+}
+
+
+.load-comment-button img{
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+.hashtag-container{
+  list-style: none;
+  display: flex;
+  padding: 0;
+  gap: 0.5em;
+  color: rgb(16, 157, 245);
+}
+@media screen and (max-width: 750px) {
+  .prof-pic{
+    width: 120px;
+    height: 120px;
+  }
+  .header{
+    gap: 5em;
+  }
+  .name, .profession{
+    font-size: 14px;
+  }
+  .article-container{
+    flex-direction: column;
+    flex-flow: column-reverse;
+    gap: 3em;
+    padding: 2em;
+  }
+  .article-container>div{
+    width: 100%;
+  }
+  .article>p{
+    font-size: 14px;
+    flex-grow: 1;
+  }
+  .reaction-comments{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    padding: 1em 1.5em;
+  }
+  .reactions div {
+    font-size: 16px;
+  }
+  .comment-input{
+    width: 100%;
+    padding: 0.5em;
+    justify-content: space-between;
+  }
+  .comment-input .comment{
+    font-size: 14px;
+    padding: 0.5em 1em;
+  }
+  .corres-pic{
+    justify-content: center;
+  }
+  .comment{
+    width: 100%;
+  }
+  .cam-emo-container{
+    display: flex;
+  }
+}
+@media screen and (min-width: 750px) and (max-width: 1100px) {
+.corres-pic img{
+  width: 100%;
+}  
+}
+@media  screen and (min-width: 1100px) {
+  .comment{
+    width: 25em;
+  }
+}
